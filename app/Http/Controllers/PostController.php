@@ -63,7 +63,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('dashboard.post.edit',['post'=>$post]);
+        //return view('dashboard.post.edit',['post'=>$post]);
+        $categories = Category::pluck('id','category');
+        return view('dashboard.post.edit',['post'=> $post,'categories' => $categories]);
     }
 
     /**
