@@ -86,7 +86,8 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return back()->with('status', 'Categoría eliminada con éxito');
+        //return back()->with('status', 'Categoría eliminada con éxito');
+        return redirect("/dashboard/category");
     }
 
     public function __construct()

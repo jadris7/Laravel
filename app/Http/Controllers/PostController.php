@@ -91,8 +91,10 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return back()->with('status', 'Publicación eliminada con éxito');
+        return redirect("/dashboard/post");
+        // return back()->with('status', 'Publicación eliminada con éxito');
     }
+
      public function __construct()
      {
         $this->middleware(['auth','rol.admin']);

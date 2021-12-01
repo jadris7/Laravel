@@ -1,5 +1,4 @@
 @csrf
-<!-- OBLIGATORIO EN LOS FORMULARIOS PARA EVITAR HACKING NO ETICO -->
 @include('dashboard.partials.validation-errors')
 <div class="form-group row">
     <label for="publication" class="col-md-2 col-form-label text-md-right">

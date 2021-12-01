@@ -1,6 +1,10 @@
 @extends('dashboard.master')
 @section('content')
-    <div class="text-md-center"><strong>{{ __('Publicación') }}</strong></div>
+    <div class="text-md-center">
+        <h3>Publicación</h3>
+        <br>
+    </div>
+
     <div class="form-group">
         <label for="name" class="col-form-label text-md-right"><strong>{{ __('Nombre') }}</strong></label>
         <input readonly class="form-control" type="text" name="publication" id="publication" placeholder="Publicación"
@@ -10,12 +14,17 @@
     <div class="form-group">
         <label for="name" class="col-form-label text-md-right"><strong>{{ __('Descripción') }}</strong></label>
         <textarea readonly class="form-control" name="publication_content" id="publication_content" cols="30" rows="10">
-                {{ $post->publication_content }}
-            </textarea>
+                        {{ $post->publication_content }}
+                    </textarea>
     </div>
 
     <div>
-        <a href="{{ URL::previous() }}" class="btn btn-danger">Cancelar</a>
-        <button type="submit" class="btn btn-success">Guardar</button>
+        <form action="{{ route('post.destroy', $post->id) }}" method="POST">
+            @method('DELETE')
+            @csrf
+            <a href="{{ URL::previous() }}" class="btn btn-danger">Cancelar</a>
+            <input type="submit" value="Eliminar" class="btn btn-success">
+        </form>
     </div>
+
 @endsection

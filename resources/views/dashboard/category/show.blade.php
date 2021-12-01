@@ -1,6 +1,9 @@
 @extends('dashboard.master')
 @section('content')
-    <div class="text-md-center"><strong>{{ __('Categoría') }}</strong></div>
+    <div class="text-md-center">
+        <h3>Categoría</h3>
+        <br>
+    </div>
 
     <div class="form-group">
         <label for="name" class="col-form-label text-md-right"><strong>{{ __('Nombre') }}</strong></label>
@@ -11,12 +14,16 @@
     <div class="form-group">
         <label for="name" class="col-form-label text-md-right"><strong>{{ __('Descripción') }}</strong></label>
         <textarea readonly class="form-control" name="description_category" id="description_category" cols="30" rows="10">
-            {{ $category->description_category }}
-        </textarea>
+                    {{ $category->description_category }}
+                </textarea>
     </div>
 
     <div>
-        <a href="{{ URL::previous() }}" class="btn btn-danger">Cancelar</a>
-        <button type="submit" class="btn btn-success">Guardar</button>
+        <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+            @method('DELETE')
+            @csrf
+            <a href="{{ URL::previous() }}" class="btn btn-danger">Cancelar</a>
+            <input type="submit" value="Eliminar" class="btn btn-success">
+        </form>
     </div>
 @endsection
