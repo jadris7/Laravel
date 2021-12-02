@@ -17,6 +17,8 @@
                         Bienvenid@ al sistema {{ auth()->user()->name }}
                     @endauth
                 </div>
+                <a href="{{ route('post.index') }}" class="btn btn-primary">Listar Publicaciones</a>
+                <a href="{{ route('category.index') }}" class="btn btn-light">Listar Categorías</a>
             </div>
         </div>
     </div>

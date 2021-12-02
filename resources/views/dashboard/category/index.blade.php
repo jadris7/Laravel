@@ -38,6 +38,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                <a href="{{ URL::previous() }}" class="btn btn-danger ">Atrás</a>
+                <a href="{{ route('category.create') }}" class="btn btn-primary ">Crear</a>
+                <a href="{{ route('category.edit', $category->id) }}"class="btn btn-success">Editar</a>
+                <a href="{{ route('home') }}" class="btn btn-info">Inicio</a>
             @endif
         </div>
     </div>

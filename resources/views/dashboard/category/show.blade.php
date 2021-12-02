@@ -22,8 +22,9 @@
         <form action="{{ route('category.destroy', $category->id) }}" method="POST">
             @method('DELETE')
             @csrf
-            <a href="{{ URL::previous() }}" class="btn btn-danger">Cancelar</a>
+            <a href="{{ URL::previous() }}" class="btn btn-danger">Atrás</a>
             <input type="submit" value="Eliminar" class="btn btn-success">
+            <a href="{{ route('home') }}" class="btn btn-info">Inicio</a>
         </form>
     </div>
 @endsection

@@ -44,6 +44,7 @@
 </div>
 
 <div>
-    <a href="{{ URL::previous() }}" class="btn btn-danger">Cancelar</a>
+    <a href="{{ URL::previous() }}" class="btn btn-danger">Atrás</a>
     <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="{{ route('home') }}" class="btn btn-info">Inicio</a>
 </div>

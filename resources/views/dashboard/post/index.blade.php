@@ -29,16 +29,20 @@
                                 <td class="text-justify">{!! $post->publication_content !!}</td>
                                 <td>{!! $post->state !!}</td>
                                 <td class="col text-center btn btn-default btn-lg">
-                                    <button class="far fa-trash-alt" data-toggle="modal"
-                                        data-target="#modal-delete-{{ $post->id }}">
+                                    <a data-toggle="modal" data-target="#modal-delete-{{ $post->id }}">
                                         <i class="far fa-trash-alt"></i>
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                             @include('dashboard.post.delete')
                         @endforeach
                     </tbody>
                 </table>
+                <a href="{{ URL::previous() }}" class="btn btn-danger ">Atrás</a>
+                <a href="{{ route('post.create') }}" class="btn btn-primary">Crear</a>
+                <a href="{{ route('post.edit', $post->id) }}"class="btn btn-success">Editar</a>
+                <a href="{{ route('home') }}" class="btn btn-info">Inicio</a>
+
             @endif
         </div>
     </div>

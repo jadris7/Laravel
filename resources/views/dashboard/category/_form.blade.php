@@ -12,8 +12,9 @@
 </div>
 
 <div>
-    <a href="{{ URL::previous() }}" class="btn btn-danger btn-sm">Cancelar</a>
-    <button type="submit" class="btn btn-info btn-sm">Guardar</button>
+    <a href="{{ URL::previous() }}" class="btn btn-danger ">Atrás</a>
+    <button type="submit" class="btn btn-primary ">Guardar</button>
+    <a href="{{ route('home') }}" class="btn btn-info">Inicio</a>
 </div>
 
 
